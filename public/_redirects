@@ -1,0 +1,6 @@
+# Legacy routes. These must stay above the SPA fallback.
+/guest-requests           /become-a-guest              301!
+/sponsor-opportunities    /become-a-guest#sponsorship  301!
+/contact                  /work-with-us                301!
+/featured-clients         /featured-podcasts           301!
+/*                        /index.html                  200

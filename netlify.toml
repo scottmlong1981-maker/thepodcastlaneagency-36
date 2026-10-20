@@ -1,0 +1,49 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Daily scheduled rebuild so new YouTube episodes appear without a manual deploy.
+# Needs BUILD_HOOK_URL set in Site settings > Environment variables.
+[functions]
+  directory = "netlify/functions"
+
+# Consolidated Become a Guest page. These two pages no longer exist as
+# standalone routes; 301 so external links and search engines follow.
+[[redirects]]
+  from = "/guest-requests"
+  to = "/become-a-guest"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/sponsor-opportunities"
+  to = "/become-a-guest#sponsorship"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/contact"
+  to = "/work-with-us"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/featured-clients"
+  to = "/featured-podcasts"
+  status = 301
+  force = true
+
+# SPA fallback. Netlify serves real files first, so /forms.html and the
+# static assets are unaffected by this catch-all.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

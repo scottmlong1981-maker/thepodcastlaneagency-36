@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <title>Form registration - The Podcast Lane</title>
+  </head>
+  <body>
+    <!--
+      Netlify detects forms by parsing static HTML at deploy time. The React app
+      posts to these same form names. Do not delete this file.
+    -->
+    <form name="guest-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="guest-request" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="podcast" />
+      <input type="text" name="business" />
+      <textarea name="topics"></textarea>
+      <textarea name="links"></textarea>
+      <textarea name="background"></textarea>
+      <textarea name="motivation"></textarea>
+      <textarea name="discussionTopics"></textarea>
+      <textarea name="bio"></textarea>
+      <textarea name="publicContact"></textarea>
+      <input type="text" name="consent" />
+    </form>
+
+    <form name="sponsor-opportunity" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="sponsor-opportunity" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="sponsorPodcast" />
+      <input type="text" name="business" />
+      <textarea name="message"></textarea>
+      <input type="text" name="consent" />
+    </form>
+
+    <form name="work-with-us-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="work-with-us-inquiry" />
+      <input name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <input type="text" name="business" />
+      <input type="url" name="website" />
+      <input type="text" name="service" />
+      <textarea name="details"></textarea>
+      <input type="text" name="timeline" />
+      <input type="text" name="consent" />
+    </form>
+  </body>
+</html>

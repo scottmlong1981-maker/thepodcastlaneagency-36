@@ -1,0 +1,29 @@
+{
+  "name": "the-podcast-lane",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Marketing and episode website for The Podcast Lane.",
+  "scripts": {
+    "dev": "vite",
+    "prebuild": "node scripts/sync-episodes.mjs && node scripts/sync-podcasts.mjs",
+    "build": "vite build",
+    "preview": "vite preview",
+    "sync": "node scripts/sync-episodes.mjs",
+    "episodes": "python3 scripts/build_episodes.py",
+    "preview:single": "vite build --config vite.config.preview.js",
+    "sync:podcasts": "node scripts/sync-podcasts.mjs",
+    "test": "node smoke.mjs && node interact.mjs && node test-sync.mjs && node test-podcasts.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.0",
+    "vite-plugin-singlefile": "^2.3.3",
+    "jsdom": "^25.0.1"
+  }
+}
